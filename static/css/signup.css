@@ -1,0 +1,47 @@
+body{
+    background-color:  rgb(12, 15, 28);
+    align-items: center;
+    transform: translate(-50%,-50%);
+    margin: 0;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+
+form{ 
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    background-color: white;
+}
+
+h2{
+    color: aliceblue;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+form .corpsForm input{
+    margin-left: 15px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #c9c9c9;
+    outline-color: violet;
+    border-radius: 10px;
+
+}
+form .EnvForm button{
+    background-color: #747cdf;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+form .EnvForm button:hover{
+    transform: scale(1.05);
+}

@@ -1,0 +1,82 @@
+
+
+A- INSTALLATION DE MYSQL SUR linux
+
+Pour installer MySQL sur Ubuntu, vous pouvez suivre les étapes suivantes :
+    1. Ouvrez un terminal sur votre système Ubuntu.
+    2. Mettez à jour le gestionnaire de paquets avec la commande suivante :
+       
+       sudo apt update
+    3. Installez le paquet MySQL Server en utilisant la commande suivante :
+       
+       sudo apt install mysql-server
+    4. Pendant l'installation, vous serez invité à définir un mot de passe pour l'utilisateur root de MySQL. Choisissez un mot de passe sécurisé et souvenez-vous de celui-ci.
+    5. Une fois l'installation terminée, MySQL Server sera démarré automatiquement. Vous pouvez vérifier son statut en utilisant la commande :
+       
+       sudo systemctl status mysql
+    6. Si MySQL n'est pas en cours d'exécution, vous pouvez le démarrer avec la commande suivante :
+       
+       sudo systemctl start mysql
+Maintenant, vous avez installé MySQL Server avec succès sur votre système Ubuntu. Vous pouvez vous connecter à MySQL en utilisant la commande suivante :
+
+mysql -u root -p
+Il vous sera demandé de saisir le mot de passe que vous avez défini lors de l'installation. Une fois connecté, vous pouvez commencer à utiliser MySQL.
+Veuillez noter que ces instructions sont basées sur la version actuelle d'Ubuntu au moment de la rédaction de cette réponse. Si vous utilisez une version différente, il est possible que les commandes ou les étapes diffèrent légèrement.
+
+
+LIEN POUR TELECHARGER POSTGRES : https://fr.linux-console.net/?p=1637#gsc.tab=0
+ALTER USER pgadmin WITH PASSWORD 'Mariam@’;
+
+
+
+Sur Ubuntu, vous pouvez créer une base de données en utilisant le système de gestion de base de données MySQL. Voici les étapes pour créer une base de données sur Ubuntu :
+    1. Assurez-vous que MySQL est installé sur votre système. Si ce n'est pas le cas, vous pouvez l'installer en exécutant la commande suivante dans un terminal :
+       sqlCopy code
+       sudo apt-get update
+       sudo apt-get install mysql-server
+    2. Une fois que MySQL est installé, vous pouvez vous connecter à l'interpréteur de commandes MySQL en utilisant la commande suivante :
+       cssCopy code
+       mysql -u root -p
+       Vous serez invité à entrer le mot de passe pour l'utilisateur root MySQL.
+    3. Une fois connecté à l'interpréteur de commandes MySQL, vous pouvez créer une nouvelle base de données en utilisant la commande CREATE DATABASE :
+       sqlCopy code
+       CREATE DATABASE nom_de_la_base_de_donnees;
+       Remplacez nom_de_la_base_de_donnees par le nom que vous souhaitez donner à votre base de données.
+    4. Vous pouvez vérifier que la base de données a été créée en utilisant la commande SHOW DATABASES;. Cela affichera toutes les bases de données présentes sur votre serveur MySQL.
+    5. Vous pouvez sélectionner la base de données que vous venez de créer en utilisant la commande USE :
+       Copy code
+       USE nom_de_la_base_de_donnees;
+       Vous êtes maintenant prêt à effectuer des opérations dans cette base de données.
+Ces étapes devraient vous permettre de créer une base de données sur Ubuntu en utilisant MySQL. Vous pouvez utiliser des clients MySQL graphiques tels que MySQL Workbench ou phpMyAdmin pour faciliter la gestion de vos bases de données si vous le souhaitez.
+
+Lors de l'installation de MySQL sur Ubuntu, il est possible que vous n'ayez pas été invité à définir un mot de passe pour l'utilisateur root de la base de données. Cela peut être dû à différentes raisons, telles que des paramètres par défaut spécifiques de la distribution Ubuntu ou des options d'installation sélectionnées.
+Pour définir un mot de passe pour l'utilisateur root de MySQL, vous pouvez suivre les étapes suivantes :
+    1. Ouvrez un terminal sur votre système Ubuntu.
+    2. Connectez-vous à MySQL en tant qu'utilisateur root en utilisant la commande suivante :
+       Copy code
+       sudo mysql
+    3. Une fois connecté à MySQL, vous pouvez définir un mot de passe pour l'utilisateur root en utilisant la commande ALTER USER. Par exemple, pour définir le mot de passe "monmotdepasse", utilisez la commande suivante :
+       sqlCopy code
+       ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'monmotdepasse';
+       Assurez-vous de remplacer "monmotdepasse" par le mot de passe de votre choix.
+    4. Après avoir défini le mot de passe, vous devez rafraîchir les privilèges MySQL en utilisant la commande FLUSH PRIVILEGES :
+       Copy code
+       FLUSH PRIVILEGES;
+    5. Vous pouvez maintenant quitter l'interface MySQL en utilisant la commande exit ou quit :
+       bashCopy code
+       exit
+Après avoir suivi ces étapes, le mot de passe pour l'utilisateur root de MySQL devrait être défini. Vous pourrez ensuite vous connecter à MySQL en utilisant le mot de passe que vous avez spécifié.
+
+
+
+B/ étape pour créer une base de données
+
+a- utiliser la commande suivante dans le terminal : CREATE DATABASE nom_de_la_base_de_donnees // exemple CREATE DATABASE USER
+
+/*créer une table avec la commande, ecris en majuscule : CREATE TABLE suivie du nom de la table qu'on doit créer 
+suivi des attributs*/
+b/ CREATE TABLE users (    
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(200) NOT NULL UNIQUE,
+    password VARCHAR(200) NOT NULL
+);
